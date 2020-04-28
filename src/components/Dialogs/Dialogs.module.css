@@ -1,0 +1,25 @@
+.dialogs{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+.dialog{
+
+}
+.dialog a{
+    text-decoration: none;
+    color: black;
+
+}
+.dialogsItems{
+    background-color: whitesmoke;
+
+}
+.messages{
+
+}
+.message{
+
+}
+.dialog a.activeLink{
+    color:purple;
+}

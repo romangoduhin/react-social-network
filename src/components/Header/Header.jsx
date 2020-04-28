@@ -3,8 +3,9 @@ import s from "./Header.module.css"
 const Header = () => {
     return( <header className={s.header}>
         <img
-            src="https://c7.hotpng.com/preview/817/325/297/sneakers-logo-nike-clothing-sneaker-collecting-sneakers-thumbnail.jpg"
+            src="https://oc7.ocstatic.com/images/image-converter.png"
             alt="img"/>
+
     </header>)
 
 }

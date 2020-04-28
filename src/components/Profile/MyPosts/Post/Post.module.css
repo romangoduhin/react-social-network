@@ -1,7 +1,8 @@
 
 .item {
-    color:gold;
+    color:black;
 }
 .item img {
     width:30px;
+    border-radius: 20px;
 }
