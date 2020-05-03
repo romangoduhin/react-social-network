@@ -9,22 +9,22 @@ import Settings from "./components/Settings/Settings";
 import {BrowserRouter, Route} from "react-router-dom";
 
 
-const App = ()=> {
-  return (
- <BrowserRouter>
-      <div className="app-wrapper">
-        <Header />
-        <NavBar/>
-        <div className='app-wrapper-content'>
-        <Route path='/profile' component={Profile}/>
-        <Route path='/dialogs' component={Dialogs}/>
-        <Route path='/settings' component={Settings}/>
-        <Route path='/clothing' />
-        <Route path='/other' />
+const App = () => {
+    return (
+        <BrowserRouter>
+            <div className="app-wrapper">
+                <Header/>
+                <NavBar/>
+                <div className='app-wrapper-content'>
+                    <Route exact path='/profile' component={Profile}/>
+                    <Route exact path='/dialogs' component={Dialogs}/>
+                    <Route path='/settings' component={Settings}/>
+                    <Route path='/clothing'/>
+                    <Route path='/other'/>
 
-       </div>
-      </div>
- </BrowserRouter>
-  );
+                </div>
+            </div>
+        </BrowserRouter>
+    );
 }
 export default App;

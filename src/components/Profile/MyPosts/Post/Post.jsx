@@ -8,7 +8,7 @@ return(
                <img src="https://www.meme-arsenal.com/memes/ffada9854820b4c54445f5622a0d0771.jpg" alt="avatar"/>
            <div className={s.item}>{props.message}</div>
 
-        <span>like {props.likes} </span>
+        <span>like {props.likesCount} </span>
     </div>
 
 

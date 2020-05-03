@@ -1,35 +1,5 @@
 .content {
 
 }
-.profileWrapper{
-    margin: 0 auto;
-    display: grid;
-    grid-template-areas:
-            "a i m";
-    grid-template-columns: 10fr 3fr 10fr;
-    grid-gap: 5px;
 
-}
-.profileAvatar{
-
-    width: 350px;
-    height: 500px;
-    grid-area:a
-}
-.profileAvatar img{
-    width: 300px;
-    max-width: 300px;
-}
-
-.profileInformation {
-
-    width: 400px;
-    grid-area: i;
-}
-
-
-.profileMusicPlayer{
-    grid-area: m;
-    background-color: floralwhite;
-}
 
