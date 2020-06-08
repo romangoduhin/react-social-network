@@ -8,7 +8,7 @@ return(
 
     <div className={s.content}>
         <ProfileInfo/>
-       < MyPosts posts={props.state.posts}/>
+       < MyPosts posts={props.profilePage.posts} addPost ={props.addPost} updatePostText ={props.updatePostText} newPostText={props.profilePage.newPostText}/>
 </div>
 
 
