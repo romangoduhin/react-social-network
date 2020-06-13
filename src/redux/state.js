@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST';
+const ADD_MESSAGE = 'ADD-MESSAGE';
 const UPDATE_POST_TEXT = 'UPDATE-POST-TEXT';
+const UPDATE_MESSAGE_TEXT = 'UPDATE-MESSAGE-TEXT';
 let store = {
     _state :{
         dialogsPage:{
@@ -12,8 +14,9 @@ let store = {
             messages : [
                 {id: 1, message: "Hello"},
                 {id: 2, message: "hi"},
-                {id: 3, message: "wassup"},
-            ]},
+                {id: 3, message: "wassup"}],
+            newMessageText: 'input message'
+        },
         profilePage:{
             posts : [
                 {id: 1, message: "Its my first post", likesCount: 3},
@@ -45,6 +48,19 @@ let store = {
             this._state.profilePage.newPostText = action.newText;
             this. _callSubscriber(this._state)
         }
+        if (action.type === ADD_MESSAGE){
+            let newMessage = {
+                id: 4,
+                message: this._state.dialogsPage.newMessageText
+                            };
+            this._state.dialogsPage.messages.push(newMessage);
+            this._state.dialogsPage.newMessageText = '';
+            this. _callSubscriber(this._state);
+        }
+        else if (action.type === UPDATE_MESSAGE_TEXT){
+            this._state.dialogsPage.newMessageText = action.newText;
+            this._callSubscriber(this._state)
+        }
     },
 
 };
@@ -59,6 +75,18 @@ let store = {
 
         return{
         type: UPDATE_POST_TEXT,
+        newText:text
+    }
+};
+    export const addMessageActionCreator=()=>{
+        return{
+            type:ADD_MESSAGE
+        }
+    };
+    export const updateMessageTextActionCreator =(text)=>{
+
+    return{
+        type: UPDATE_MESSAGE_TEXT,
         newText:text
     }
 };
