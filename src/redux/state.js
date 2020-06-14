@@ -15,14 +15,14 @@ let store = {
                 {id: 1, message: "Hello"},
                 {id: 2, message: "hi"},
                 {id: 3, message: "wassup"}],
-            newMessageText: 'input message'
+            newMessageText: ''
         },
         profilePage:{
             posts : [
                 {id: 1, message: "Its my first post", likesCount: 3},
                 {id: 2, message: "Its my second post", likesCount: 4}
             ],
-            newPostText: 'input message',
+            newPostText: '',
         }
 
     },    _callSubscriber () {
