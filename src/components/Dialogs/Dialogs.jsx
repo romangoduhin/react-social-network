@@ -7,8 +7,8 @@ import Message from "./Message/Message";
 
 const Dialogs = (props) => {
 
- let dialogsElements = props.dialogs.map( d => <DialogItem name={d.name} id={d.id}/>);
- let messagesElements = props.messages.map( m => <Message message={m.message} id={m.id}/>);
+ let dialogsElements = props.dialogsPage.dialogs.map( d => <DialogItem name={d.name} key={d.id} id={d.id}/>);
+ let messagesElements = props.dialogsPage.messages.map( m => <Message message={m.message} key={m.id} id={m.id}/>);
 
  let onAddMessage = ()=>{
      props.addMessage();
@@ -26,7 +26,7 @@ const Dialogs = (props) => {
                 </div>
                 <div className={s.messages}>
                    <div>{messagesElements}</div>
-                    <div><textarea onChange ={onMessageChange}   value ={props.newMessageText} placeholder='Enter your message'> </textarea></div>
+                    <div><textarea onChange ={onMessageChange}   value ={props.dialogsPage.newMessageText} placeholder='Enter your message'> </textarea></div>
                    <div> <button onClick={onAddMessage}> send</button></div>
 
                 </div>
