@@ -1,8 +1,18 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USER = 'SET_USER';
-let initialState = {users: [
-        ]
+const SET_CURRENT_PAGE ='SET_CURRENT_PAGE';
+const SET_TOTAL_USERS_COUNT ='SET_TOTAL_USERS_COUNT';
+const TOGGLE_IS_FETCHING ='TOGGLE_IS_FETCHING';
+
+
+
+let initialState = {
+    users: [],
+    currentPage:1,
+    totalUsersCount: 0,
+    pageSize: 5,
+    isFetching : false
 };
 const usersReducer = (state = initialState, action) => {
 
@@ -32,22 +42,37 @@ const usersReducer = (state = initialState, action) => {
                 )
             }
         }
-        case SET_USER:{
-            return{
-                ...state,users:[...state.users, ...action.users]
+        case SET_USER: {
+            return {
+                ...state, users:action.users
+            }
+        }
+        case SET_CURRENT_PAGE: {
+            return {
+                ...state, currentPage: action.page
+            }
+        }
+        case SET_TOTAL_USERS_COUNT: {
+            return {
+                ...state, totalUsersCount: action.count
+            }
+        }
+        case TOGGLE_IS_FETCHING: {
+            return {
+                ...state,isFetching: action.isFetching
             }
         }
         default:
             return state;
     }
 };
-export const followActionCreator = (userId) => {
+export const follow = (userId) => {
     return {
         type: FOLLOW,
         userId
     }
 };
-export const unfollowActionCreator = (userId) => {
+export const unfollow = (userId) => {
 
     return {
         type: UNFOLLOW,
@@ -55,10 +80,29 @@ export const unfollowActionCreator = (userId) => {
 
     }
 };
-export const setUserActionCreator =(users)=>{
-    return{
+export const setUsers = (users) => {
+    return {
         type: SET_USER,
         users
     }
 };
+export const setCurrentPage = (page) => {
+    return {
+        type: SET_CURRENT_PAGE,
+        page
+    }
+};
+export const setTotalUsersCount= (count) => {
+    return {
+        type: SET_TOTAL_USERS_COUNT,
+        count
+    }
+};
+export const toggleIsFetching = (isFetching)=>{
+    return {
+        type: TOGGLE_IS_FETCHING,
+        isFetching
+    }
+}
+
 export default usersReducer;
