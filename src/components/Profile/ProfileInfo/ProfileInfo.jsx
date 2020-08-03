@@ -1,12 +1,16 @@
 import React from "react";
 import s from "./ProfileInfo.module.css"
+import Preloader from "../../common/Preloader/Preloader";
 
-const ProfileInfo =()=>{
+const ProfileInfo =(props)=>{
+   if (!props.profile){
+     return <Preloader/>
+   }
 return(
 
         <div className={s.profileWrapper}>
             <div className={s.profileAvatar}>
-                <img src="https://sun9-13.userapi.com/nQwBKHcZrq9odU8mtP4iEUagTSiPzY43tndnYg/NNabaEe2ufQ.jpg" alt="avatar"/>
+              <img src={props.profile.photos.large} alt="aaa"/>
             </div>
             <div className={s.profileInformation}>
                 <div>
