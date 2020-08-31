@@ -2,11 +2,11 @@ import React from "react";
 import s from "./ProfileInfo.module.css"
 import Preloader from "../../common/Preloader/Preloader";
 
-const ProfileInfo =(props)=>{
-    if (!props.profile){
+const ProfileInfo = (props) => {
+    if (!props.profile) {
         return <Preloader/>
     }
-return(
+    return (
         <div className={s.profileWrapper}>
             <div className={s.profileAvatar}>
                 <img src={props.profile.photos.large} alt=""/>
@@ -14,11 +14,10 @@ return(
             <div className={s.profileInformation}>
                 <div>
                     <ul>
-                        <li>Country</li>
-                        <li>City</li>
-                        <li>Job</li>
-                        <li>Education</li>
-                        <li>Nickname</li>
+                        <li>About me: {props.profile.aboutMe}</li>
+                        <li>fullName: {props.profile.fullName}</li>
+                        <li>lookingForAJob: {props.profile.lookingForAJob}</li>
+                        <li>lookingForAJobDescription:  {props.profile.lookingForAJobDescription}</li>
                     </ul>
                 </div>
             </div>
@@ -31,8 +30,6 @@ return(
         </div>
 
 
-
-
-)
+    )
 }
 export default ProfileInfo;
