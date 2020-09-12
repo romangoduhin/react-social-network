@@ -4,29 +4,10 @@ import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 
 
-/*const DialogsContainer = () => {
-    return (
-        <StoreContext.Consumer>
-            {(store) => {
-                let state = store.getState().dialogsPage;
-                let addMessage = () => {
-                    store.dispatch(addMessageActionCreator())
-                };
-                let updateMessageText = (text) => {
-
-                    store.dispatch(updateMessageTextActionCreator(text))
-                };
-                return (<Dialogs updateMessageText={updateMessageText} addMessage={addMessage}
-                                 newMessageText={state.newMessageText} messages={state.messages}
-                                 dialogs={state.dialogs}/>)
-            }}
-        </StoreContext.Consumer>
-    )
-
-};*/
 let mapStateToProps = (state) => {
     return {
-        dialogsPage: state.dialogsPage
+        dialogsPage: state.dialogsPage,
+        isAuth: state.auth.isAuth
     }
 };
 let mapDispatchToProps = (dispatch) => {

@@ -3,7 +3,7 @@ import s from './Users.module.css';
 
 import userPng from "../../assets/images/userPng.png"
 import {NavLink} from "react-router-dom";
-import {follow, unfollow} from "../../redux/users-reducer";
+
 
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -45,8 +45,7 @@ let Users = (props) => {
                     <span>
                     <div>{u.name}</div>
                     <div>{u.status}</div>
-                    <div>{"u.location.city"}</div>
-                    <div>{"u.location.country"}</div>
+
                     </span>
                 </div>
             )
