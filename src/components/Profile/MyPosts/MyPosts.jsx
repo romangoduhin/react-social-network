@@ -17,7 +17,7 @@ const MyPosts = (props) => {
                 New post
                 <textarea onChange={onPostChange} value={props.newPostText} placeholder='Enter your message'/>
                 <button onClick={onAddPost}>add post</button>
-                <button>remove</button>
+
             </div>
             <div className={s.posts}>
                 {postsElements}
