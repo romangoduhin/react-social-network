@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Header.module.css"
 import {NavLink} from "react-router-dom";
-import {logoutUser} from "../../redux/auth-reducer";
+
 
 const Header = (props) => {
     return (<header className={s.header}>
